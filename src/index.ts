@@ -38,3 +38,13 @@ await manager
     })
     .spawn()
     .catch((error: unknown) => log.error("SHARD_SPAWN_ERR: ", error));
+
+import http from "node:http";
+
+const PORT = process.env.PORT || 3000;
+http.createServer((_, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("OK\n");
+}).listen(PORT, () => {
+    log.info(`[HTTP] Server is running on port ${PORT}`);
+});    
