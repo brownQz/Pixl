@@ -30,6 +30,9 @@ LABEL maintainer "PixlGalaxy <https://github.com/PixlGalaxy>"
 # Install ffmpeg
 RUN apk add --no-cache ffmpeg python3 && ln -sf python3 /usr/bin/python
 
+# Download yt-dlp binary
+RUN wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp && chmod a+rx /usr/local/bin/yt-dlp
+
 # Copy needed files
 COPY --from=build-stage /tmp/build/package.json .
 COPY --from=build-stage /tmp/build/node_modules ./node_modules
