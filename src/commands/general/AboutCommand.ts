@@ -39,8 +39,8 @@ export class AboutCommand extends BaseCommand {
             [i18n.__("commands.general.about.discordJSVersionString"), DJSVersion],
             [i18n.__("commands.general.about.ffmpegVersionString"), this.client.utils.getFFmpegVersion()],
             [i18n.__("commands.general.about.botVersionString"), pkg.version],
-            [""],
-            [i18n.__("commands.general.about.sourceCodeString"), "GitHub.com/PixlGalaxy/Pixl"]
+            // [""],
+            // [i18n.__("commands.general.about.sourceCodeString"), "GitHub.com/PixlGalaxy/Pixl"]
         ];
         const value = createTable(values);
 
